@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ideias - Casa Criativa</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+    </head>
+
+    <body id="page-ideas">
+        <div id="container">
+            <header>
+                <section id="logos">
+                    <a href="/">
+                        <img id = "minilogo" src="https://image.flaticon.com/icons/svg/2729/2729003.svg" alt="Mini Logo">
+                        <img id = "logo" src="Logo.png" alt="Logomarca">
+                    </a>
+                </section>
+                <nav>
+                    <li><a href="/">Início</a></li>
+                    <li id="this"><a href="#">Ideias</a></li>
+                    <li><a href="#" onclick="hider()">Nova Ideia</a></li>
+                </nav>        
+            </header>
+            <section id="title">
+                <p>Em Exibicão</p>
+                <h1>Ideias</h1>
+                <main>
+                    <section id="ideas">
+                        {% for idea in ideias %}
+                            <div class="idea">
+                                <img src="{{idea.image}}" alt="IMG {{idea.title}}">
+
+                                <div class="content">
+                                    <h3>{{idea.title}}</h3>
+                                    <p>{{idea.category}}</p>
+                                    <div class="description">
+                                        {{idea.description}}
+                                    </div>
+                                    <a href="{{idea.link}}" target ="_blank">Ir para a Idéia</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </section>
+                </main>
+            </section>
+            <footer>
+                <p id="footer">
+                    Com <i class="em em-heart" aria-role="presentation" aria-label="HEAVY BLACK HEART"></i> <a target ="_blank" href="http://twitter.com/StefanGSchneid">Stefan Schneider</a> via <a target ="_blank" href="http://rocketseat.com.br">Rocketseat</a>
+                </p>
+                <p id="twitch">Vai pro meu <a target ="_blank" href="http://twitch.tv/S_Schneider"><strong>Canal da Twitch!</strong></a></p>
+    
+                <p id="youtube">Ou pro meu <a target ="_blank" href="http://youtube.com/stefangamer97"><strong>Canal do Youtube!</strong></a></p>
+            
+            </footer>
+        </div>
+
+        {% include "form.html" %}
+
+    </body>
+    <script src="scripts.js"></script>
+</html>
